@@ -1,4 +1,27 @@
-<div class="parent-frag" th:fragment="parent">
-    <h1>This is parent fragment from base class</h1>
-    <p>this is some laudem ipsum ka bhang bhosda, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos </p>
-</div>
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title,script    )" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" data-th-href = "@{'/css/output.css'}" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">Smart Contact Manager</title>
+</head>
+<body>
+    <!-- navbar -->
+     <div data-th-replace="navbar :: navbar"></div>
+
+
+
+
+    <!-- main content -->
+     <div class="p-4 m-4">
+        <section data-th-replace="${content}" > </section>
+     </div>
+     
+
+    <!-- flow bite content  -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <th data-th-href="${script}"></th>
+</body>
+</html>
